@@ -16,7 +16,9 @@ typedef struct pcb_st{
     task_status_en status;         // Current status of the task defined by the pcb
     uint32_t time_ms;              // Time requested by application in milliseconds
     uint32_t ellapsed_time_ms;     // Time ellapsed since start in milliseconds
-    uint32_t slice_start_ms;       // Time when the current time slice started
+    uint32_t slice_start_ms;      // Time when the current time slice started
+    uint32_t quantum_elapsed_ms;  //tempo usado no quantum atual// para RR / MLFQ
+    uint32_t current_queue_level; // nível atual da fila no MLFQ
     uint32_t sockfd;               // Socket file descriptor for communication with the application
     uint32_t last_update_time_ms;  // Last time the PCB was updataed
 } pcb_t;

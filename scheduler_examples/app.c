@@ -103,8 +103,8 @@ int main(int argc, char *argv[]) {
     double user = (double)time_s;
     double sys = real - time_s;
 
-    printf("Application %s (PID %d) finished at time %d ms, Elapsed: %.03f seconds, CPU: %.03f seconds\n",
-           app_name, pid, msg.time_ms, real, user);
+    printf("Application %s (PID %d) finished at time %d ms, Elapsed: %.03f seconds, CPU: %.03f seconds, BLOCKED %.03f seconds\n",
+           app_name, pid, msg.time_ms, real, user, sys >0 ? sys :0);
 
     close(sockfd);
     return EXIT_SUCCESS;
